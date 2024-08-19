@@ -1,0 +1,244 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb3si6evqpbyp"]
+
+[ext_resource type="Texture2D" uid="uid://dm6bb70j5ouo2" path="res://main_menu/assets/sprites/background.png" id="1_0v66g"]
+[ext_resource type="Theme" uid="uid://d384l0kaseax3" path="res://kenny_theme/kenny_theme.tres" id="1_lcsct"]
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="2_tkoyk"]
+[ext_resource type="PackedScene" uid="uid://bks7ndqhbgvq3" path="res://sokoban.tscn" id="3_8jxgs"]
+[ext_resource type="Texture2D" uid="uid://d1fya6yedbep8" path="res://main_menu/assets/sprites/Level-1-thumbnail.png" id="5_01w6w"]
+[ext_resource type="PackedScene" uid="uid://crw3tj6nhcoc5" path="res://level_select/level_select.tscn" id="5_b7ojb"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lcsct")
+script = ExtResource("2_tkoyk")
+play = ExtResource("3_8jxgs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0v66g")
+stretch_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Main" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/Main"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"HeaderLarge"
+text = "Sokoban"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayButton" type="Button" parent="HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Control2" type="Control" parent="HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sections" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Play" type="PanelContainer" parent="HBoxContainer/Sections"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Sections/Play"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Sections/Play/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"HeaderMedium"
+text = "Level Select"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/Sections/Play/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Sections/Play/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Level1" parent="HBoxContainer/Sections/Play/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_b7ojb")]
+layout_mode = 2
+title = "Level 1"
+description = "An easy level to get you started. Don't think too hard about it."
+level = ExtResource("3_8jxgs")
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Sections/Play/VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Sections/Play/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Sections/Play/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/Sections/Play/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level 1"
+
+[node name="Label2" type="Label" parent="HBoxContainer/Sections/Play/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderSmall"
+text = "An easy level to get you started. Don't think too hard about it"
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Sections/Play/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_01w6w")
+stretch_mode = 4
+
+[node name="Options" type="PanelContainer" parent="HBoxContainer/Sections"]
+visible = false
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/Sections/Options"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"HeaderMedium"
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Credits" type="PanelContainer" parent="HBoxContainer/Sections"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Sections/Credits"]
+layout_mode = 2
+
+[node name="CreditsHeader" type="Label" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"HeaderMedium"
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="CtoA2" type="Label" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Visit fourteenscrews.itch.io for more"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control5" type="Control" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CtoA" type="Label" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Programming
+Gary Munnelly"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control3" type="Control" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CtoA3" type="Label" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Design
+Gary Munnelly & Georgie Williams"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control6" type="Control" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LevelDesignCredit" type="Label" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Level Design
+https://github.com/begoon/sokoban-maps"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control4" type="Control" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AssetsCredit" type="Label" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Assets by Kenny"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control7" type="Control" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FontCredit" type="Label" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "This project uses the OpenDyslexic font"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/Sections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Main/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Main/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Main/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Main/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

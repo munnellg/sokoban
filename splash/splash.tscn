@@ -1,0 +1,186 @@
+[gd_scene load_steps=10 format=3 uid="uid://b11sbotxnhw31"]
+
+[ext_resource type="Texture2D" uid="uid://bq04ers2j8moi" path="res://splash/assets/branding/fourteen-screws.png" id="1_ewfcx"]
+[ext_resource type="Script" path="res://splash/splash.gd" id="1_yjqr6"]
+[ext_resource type="PackedScene" uid="uid://bb3si6evqpbyp" path="res://main_menu/main_menu.tscn" id="2_2bdr3"]
+[ext_resource type="Texture2D" uid="uid://dgvdb1ai5thnr" path="res://splash/assets/branding/godot.png" id="2_o5a5s"]
+[ext_resource type="FontFile" uid="uid://chb4b6n0kl53r" path="res://splash/assets/fonts/kenney-blocks.ttf" id="3_g7ecl"]
+[ext_resource type="FontFile" uid="uid://bmf3rxqk1et62" path="res://splash/assets/fonts/kenney-pixel.ttf" id="4_4u6rt"]
+
+[sub_resource type="Animation" id="Animation_5x2xl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h6pwx"]
+resource_name = "fade_in_fade_out"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ix1ly"]
+_data = {
+"RESET": SubResource("Animation_5x2xl"),
+"fade_in_fade_out": SubResource("Animation_h6pwx")
+}
+
+[node name="Splash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yjqr6")
+next = ExtResource("2_2bdr3")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control4" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sokoban" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g7ecl")
+theme_override_font_sizes/font_size = 128
+text = "Sokoban"
+horizontal_alignment = 1
+
+[node name="Version" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g7ecl")
+theme_override_font_sizes/font_size = 32
+text = "Version 0.1.0"
+horizontal_alignment = 1
+
+[node name="Control5" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MadeBy" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_4u6rt")
+theme_override_font_sizes/font_size = 42
+text = "Made By
+Fourteen Screws"
+horizontal_alignment = 1
+
+[node name="FourteenScrews" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_ewfcx")
+expand_mode = 4
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MadeWith" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_4u6rt")
+theme_override_font_sizes/font_size = 42
+text = "Made With
+Godot"
+horizontal_alignment = 1
+
+[node name="Godot" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_o5a5s")
+expand_mode = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control6" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GameAssetsBy" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_4u6rt")
+theme_override_font_sizes/font_size = 42
+text = "Game Assets By Kenny"
+horizontal_alignment = 1
+
+[node name="Control7" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Copyright" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_4u6rt")
+theme_override_font_sizes/font_size = 42
+text = "© 2024 Fourteen Screws"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ix1ly")
+}
+autoplay = "fade_in_fade_out"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

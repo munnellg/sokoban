@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://crw3tj6nhcoc5"]
+
+[ext_resource type="Script" path="res://level_select/level_select.gd" id="1_2ghcv"]
+[ext_resource type="Texture2D" uid="uid://d1fya6yedbep8" path="res://main_menu/assets/sprites/Level-1-thumbnail.png" id="1_va5w8"]
+
+[node name="LevelSelect" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ghcv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TitleLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level 1"
+
+[node name="DescriptionLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderSmall"
+text = "An easy level to get you started. Don't think too hard about it"
+autowrap_mode = 2
+
+[node name="PreviewImage" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_va5w8")
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_type_variation = &"ClickablePanel"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
