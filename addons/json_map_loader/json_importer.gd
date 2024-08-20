@@ -19,7 +19,7 @@ func _get_save_extension():
 	return "tres"
 	
 func _get_resource_type():
-	return "Resource"
+	return "SokobanMaps"
 
 func _get_preset_count():
 	return Presets.size()
@@ -58,7 +58,7 @@ func _import(source_file, save_path, options, r_platform_variants, r_gen_files):
 		return error
 	
 	var json := test_json_conv.get_data()
-	var maps = Array()
+	var maps: Array[SokobanMap] = []
 	
 	if typeof(json) == TYPE_ARRAY:
 		for m in json:
@@ -68,14 +68,14 @@ func _import(source_file, save_path, options, r_platform_variants, r_gen_files):
 
 func parse_map(json) -> SokobanMap:
 	var map = json["map"]
-	
+		
 	var height: int = map.size()
 	var width: int  = map[0].length()
 	
 	var size = Vector2(width, height)
 	
-	var tiles = Array()
 	var player_start = Vector2(0, 0)
+	var walls   = Array()
 	var crates  = Array()
 	var pallets = Array()
 	
@@ -84,21 +84,15 @@ func parse_map(json) -> SokobanMap:
 			var symbol = map[y][x]
 			match symbol:
 				"#":
-					tiles.append(SokobanMap.TileType.OBSTRUCTED)
-				" ":
-					tiles.append(SokobanMap.TileType.PASSABLE)
+					walls.append(Vector2(x, y))
 				"@":
 					player_start = Vector2(x, y)
-					tiles.append(SokobanMap.TileType.PASSABLE)
 				".":
 					pallets.append(Vector2(x, y))
-					tiles.append(SokobanMap.TileType.PASSABLE)
 				"$":
 					crates.append(Vector2(x, y))
-					tiles.append(SokobanMap.TileType.PASSABLE)
 				"*":
 					crates.append(Vector2(x, y))
 					pallets.append(Vector2(x, y))
-					tiles.append(SokobanMap.TileType.PASSABLE)
 	
-	return SokobanMap.new(size, tiles, player_start, crates, pallets)
+	return SokobanMap.new(json["title"], json["description"], json["is_locked"], size, walls, player_start, crates, pallets)

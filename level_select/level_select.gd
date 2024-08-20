@@ -4,17 +4,22 @@ extends PanelContainer
 @export var description: String = ""
 @export var level_id: int       = 0
 
-@export var level: PackedScene;
-
 @onready var title_label       = $HBoxContainer/VBoxContainer/TitleLabel
 @onready var description_label = $HBoxContainer/VBoxContainer/DescriptionLabel
 @onready var preview_image     = $HBoxContainer/PreviewImage
 
-var mouse_over: bool = false
+signal level_selected(i: int)
 
 func _ready():
-	title_label.text = title
+	title_label.text       = title
 	description_label.text = description
+	
+	var tex_size         = preview_image.texture.atlas.get_size()
+	var tex_region_size  = preview_image.texture.region.size
+	var unit_size        = tex_size / tex_region_size
+	
+	var tex_pos = Vector2(level_id % int(unit_size.x), level_id / int(unit_size.x))
+	preview_image.texture.region.position = tex_region_size * tex_pos
 
 func _on_button_pressed():
-	get_tree().change_scene_to_packed(level)
+	level_selected.emit(level_id)

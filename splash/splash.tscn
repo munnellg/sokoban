@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bq04ers2j8moi" path="res://splash/assets/branding/fourteen-screws.png" id="1_ewfcx"]
 [ext_resource type="Script" path="res://splash/splash.gd" id="1_yjqr6"]
-[ext_resource type="PackedScene" uid="uid://bb3si6evqpbyp" path="res://main_menu/main_menu.tscn" id="2_2bdr3"]
+[ext_resource type="PackedScene" uid="uid://bks7ndqhbgvq3" path="res://sokoban.tscn" id="2_8f1vw"]
 [ext_resource type="Texture2D" uid="uid://dgvdb1ai5thnr" path="res://splash/assets/branding/godot.png" id="2_o5a5s"]
 [ext_resource type="FontFile" uid="uid://chb4b6n0kl53r" path="res://splash/assets/fonts/kenney-blocks.ttf" id="3_g7ecl"]
 [ext_resource type="FontFile" uid="uid://bmf3rxqk1et62" path="res://splash/assets/fonts/kenney-pixel.ttf" id="4_4u6rt"]
@@ -52,7 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yjqr6")
-next = ExtResource("2_2bdr3")
+next = ExtResource("2_8f1vw")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 1

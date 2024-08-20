@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bks7ndqhbgvq3"]
+
+[ext_resource type="Script" path="res://sokoban.gd" id="1_bu6ey"]
+[ext_resource type="PackedScene" uid="uid://co0wml1w0tkjs" path="res://environment/environment.tscn" id="2_kuboa"]
+[ext_resource type="PackedScene" uid="uid://oc4yyao84wfn" path="res://level_finished/level_finished.tscn" id="3_p3y27"]
+
+[node name="Sokoban" type="Node2D"]
+script = ExtResource("1_bu6ey")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -32)
+
+[node name="Environment" parent="." instance=ExtResource("2_kuboa")]
+
+[node name="LevelFinished" parent="." instance=ExtResource("3_p3y27")]

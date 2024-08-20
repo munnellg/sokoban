@@ -15,22 +15,15 @@ var moving: bool = false
 signal on_pallet
 signal off_pallet
 
-func _process(_delta):
-	# if we're already at the target, then switch to idle state
-	if not moving:
-		animated_sprite.animation = "Recessed" if state == State.on_pallet else "Idle"
-	
-func _detect_collision(direction):
-	collision_ray.set_target_position(direction * grid_size)
-	collision_ray.force_raycast_update()
-	return collision_ray.is_colliding()
-
 func push(impulse: Vector2):
 	if not moving and not _detect_collision(impulse):
 		move_to(position + impulse * grid_size)
 		return false
 	
 	return true
+
+func is_on_pallet():
+	return state == State.on_pallet
 
 func move_to(target):
 	moving = true
@@ -51,6 +44,16 @@ func move_to(target):
 	animated_sprite.animation = "Recessed" if state == State.on_pallet else "Idle"
 
 	moving = false
+
+func _process(_delta):
+	# if we're already at the target, then switch to idle state
+	if not moving:
+		animated_sprite.animation = "Recessed" if state == State.on_pallet else "Idle"
+	
+func _detect_collision(direction):
+	collision_ray.set_target_position(direction * grid_size)
+	collision_ray.force_raycast_update()
+	return collision_ray.is_colliding()
 
 func _on_pallet_check_area_entered(_area):
 	state = State.on_pallet

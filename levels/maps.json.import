@@ -1,7 +1,7 @@
 [remap]
 
 importer="sokoban.jsonmapimporter"
-type="Resource"
+type="SokobanMaps"
 uid="uid://c6gpipo7u4pu8"
 path="res://.godot/imported/maps.json-67b75bbfa52b71768de4bf47d273bc9b.tres"
 
