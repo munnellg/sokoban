@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb3si6evqpbyp"]
+[gd_scene load_steps=4 format=3 uid="uid://bb3si6evqpbyp"]
 
 [ext_resource type="Texture2D" uid="uid://dm6bb70j5ouo2" path="res://main_menu/assets/sprites/background.png" id="1_0v66g"]
 [ext_resource type="Theme" uid="uid://d384l0kaseax3" path="res://kenny_theme/kenny_theme.tres" id="1_lcsct"]
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="2_tkoyk"]
-[ext_resource type="PackedScene" uid="uid://bks7ndqhbgvq3" path="res://sokoban.tscn" id="3_8jxgs"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,7 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lcsct")
 script = ExtResource("2_tkoyk")
-play = ExtResource("3_8jxgs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -92,6 +90,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Play" type="PanelContainer" parent="HBoxContainer/Sections"]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Sections/Play"]
@@ -113,15 +112,107 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Options" type="PanelContainer" parent="HBoxContainer/Sections"]
-visible = false
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="HBoxContainer/Sections/Options"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Sections/Options"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/Sections/Options/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_type_variation = &"HeaderMedium"
 text = "Options"
 horizontal_alignment = 1
+
+[node name="AudioArea" type="PanelContainer" parent="HBoxContainer/Sections/Options/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Sections/Options/VBoxContainer/AudioArea"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer"]
+layout_mode = 2
+text = "Sound"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer"]
+layout_mode = 2
+
+[node name="MasterVolumeSlider" type="HSlider" parent="HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="MasterVolume" type="Label" parent="HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicVolumeSlider" type="HSlider" parent="HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="MusicVolumeLabel" type="Label" parent="HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Music"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer"]
+layout_mode = 2
+
+[node name="SfxVolumeSlider" type="HSlider" parent="HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="SfxVolumeLabel" type="Label" parent="HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Sound Effects"
+
+[node name="GraphicsArea" type="PanelContainer" parent="HBoxContainer/Sections/Options/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Sections/Options/VBoxContainer/GraphicsArea"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="HBoxContainer/Sections/Options/VBoxContainer/GraphicsArea/VBoxContainer"]
+layout_mode = 2
+text = "Graphics"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Sections/Options/VBoxContainer/GraphicsArea/VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/Sections/Options/VBoxContainer/GraphicsArea/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+alignment = 1
+item_count = 2
+selected = 0
+fit_to_longest_item = false
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "800x600"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/Sections/Options/VBoxContainer/GraphicsArea/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Resolution "
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer/Sections/Options/VBoxContainer/GraphicsArea/VBoxContainer"]
+layout_mode = 2
+text = "Enable Accessible Fonts"
 
 [node name="Credits" type="PanelContainer" parent="HBoxContainer/Sections"]
 visible = false

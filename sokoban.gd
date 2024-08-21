@@ -51,3 +51,12 @@ func _on_main_menu_level_resumed():
 func _on_level_finished_retry_level_pressed():
 	_init_map(environment.map_id)
 	_return_to_game()
+
+func _on_master_volume_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))
+	
+func _on_music_volume_slider_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(value))
+
+func _on_sfx_volume_slider_value_changed(value):
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sfx"), linear_to_db(value))

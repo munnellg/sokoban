@@ -1,10 +1,14 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://d384l0kaseax3"]
+[gd_resource type="Theme" load_steps=27 format=3 uid="uid://d384l0kaseax3"]
 
 [ext_resource type="Texture2D" uid="uid://hhn0a6ps87ae" path="res://kenny_theme/assets/widgets/panel.png" id="2_3dyca"]
 [ext_resource type="Texture2D" uid="uid://4dtaengrhw6l" path="res://kenny_theme/assets/widgets/button-up.png" id="2_7jlrn"]
+[ext_resource type="Texture2D" uid="uid://dnwxs2u85gxak" path="res://kenny_theme/assets/widgets/checked_checkbox.png" id="3_lvf5i"]
 [ext_resource type="Texture2D" uid="uid://c28xxrdi12qdp" path="res://kenny_theme/assets/widgets/button-down.png" id="3_q8j80"]
+[ext_resource type="Texture2D" uid="uid://d4k2yu85egcqd" path="res://kenny_theme/assets/widgets/unchecked_checkbox.png" id="4_0ju3k"]
 [ext_resource type="FontFile" uid="uid://pd46dsk2rexb" path="res://kenny_theme/assets/fonts/OpenDyslexic-Bold.otf" id="4_uiwmk"]
+[ext_resource type="Texture2D" uid="uid://bpvvt3bvl3pkg" path="res://kenny_theme/assets/widgets/slider_arrow.png" id="5_8ebfg"]
 [ext_resource type="FontFile" uid="uid://cl1rx6rr3iwy0" path="res://kenny_theme/assets/fonts/OpenDyslexic-Regular.otf" id="6_2drb6"]
+[ext_resource type="Texture2D" uid="uid://cpa3jmp4xf8aw" path="res://kenny_theme/assets/widgets/grey_sliderDown.png" id="6_xlpq7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rv8bv"]
 texture = ExtResource("2_7jlrn")
@@ -30,6 +34,18 @@ texture_margin_left = 5.0
 texture_margin_top = 5.0
 texture_margin_right = 5.0
 texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6chpj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v7xt3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4hiy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0ja8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_co1lp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7620"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3074o"]
 
@@ -60,12 +76,31 @@ Button/colors/font_color = Color(1, 1, 1, 1)
 Button/styles/hover = SubResource("StyleBoxTexture_rv8bv")
 Button/styles/normal = SubResource("StyleBoxTexture_4cdn3")
 Button/styles/pressed = SubResource("StyleBoxTexture_006c3")
+CheckBox/colors/font_color = Color(0.776471, 0.25098, 0.196078, 1)
+CheckBox/colors/font_focus_color = Color(0.776471, 0.25098, 0.196078, 1)
+CheckBox/colors/font_hover_color = Color(0.776471, 0.25098, 0.196078, 1)
+CheckBox/colors/font_hover_pressed_color = Color(0.776471, 0.25098, 0.196078, 1)
+CheckBox/colors/font_outline_color = Color(0.776471, 0.25098, 0.196078, 1)
+CheckBox/colors/font_pressed_color = Color(0.776471, 0.25098, 0.196078, 1)
+CheckBox/constants/check_v_offset = -1
+CheckBox/constants/h_separation = 4
+CheckBox/icons/checked = ExtResource("3_lvf5i")
+CheckBox/icons/unchecked = ExtResource("4_0ju3k")
+CheckBox/styles/disabled = SubResource("StyleBoxEmpty_6chpj")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_v7xt3")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_n4hiy")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_h0ja8")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_co1lp")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_u7620")
 ClickablePanel/base_type = &"Button"
 ClickablePanel/styles/disabled = SubResource("StyleBoxEmpty_3074o")
 ClickablePanel/styles/focus = SubResource("StyleBoxEmpty_yw2jc")
 ClickablePanel/styles/hover = SubResource("StyleBoxEmpty_svpou")
 ClickablePanel/styles/normal = SubResource("StyleBoxEmpty_cjgfv")
 ClickablePanel/styles/pressed = SubResource("StyleBoxFlat_er043")
+HSlider/icons/grabber = ExtResource("5_8ebfg")
+HSlider/icons/grabber_disabled = ExtResource("6_xlpq7")
+HSlider/icons/grabber_highlight = ExtResource("5_8ebfg")
 HeaderLarge/base_type = &"Label"
 HeaderLarge/colors/font_color = Color(0.776471, 0.25098, 0.196078, 1)
 HeaderLarge/font_sizes/font_size = 48

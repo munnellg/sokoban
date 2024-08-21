@@ -1,7 +1,5 @@
 extends Control
 
-@export var play: PackedScene
-
 @onready var level_list = $HBoxContainer/Sections/Play/VBoxContainer/ScrollContainer/VBoxContainer
 
 const LevelSelect = preload("res://level_select/level_select.tscn")
