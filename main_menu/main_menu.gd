@@ -36,17 +36,17 @@ func _ready():
 		level_select.level_selected.connect(_on_level_selected)
 		level_list.add_child(level_select)
 	
-	var audio_settings = ConfigFileLoader.load_audio_settings()
-	master_volume_slider.value = audio_settings[ConfigFileLoader.VOLUME_MASTER]
-	music_volume_slider.value  = audio_settings[ConfigFileLoader.VOLUME_MUSIC]
-	sfx_volume_slider.value    = audio_settings[ConfigFileLoader.VOLUME_SFX]
+	var audio_settings = Configuration.load_audio_settings()
+	master_volume_slider.value = audio_settings[Configuration.VOLUME_MASTER]
+	music_volume_slider.value  = audio_settings[Configuration.VOLUME_MUSIC]
+	sfx_volume_slider.value    = audio_settings[Configuration.VOLUME_SFX]
 	
-	var graphics_settings = ConfigFileLoader.load_graphics_settings()
-	fullscreen_checkbox.button_pressed       = graphics_settings[ConfigFileLoader.GFX_FULLSCREEN]
-	accessible_fonts_checkbox.button_pressed = graphics_settings[ConfigFileLoader.GFX_USE_ACCESSIBLE_FONTS]
+	var graphics_settings = Configuration.load_graphics_settings()
+	fullscreen_checkbox.button_pressed       = graphics_settings[Configuration.GFX_FULLSCREEN]
+	accessible_fonts_checkbox.button_pressed = graphics_settings[Configuration.GFX_USE_ACCESSIBLE_FONTS]
 	
 	for i in range(resolution_options.get_item_count()):
-		if resolution_options.get_item_text(i) == graphics_settings[ConfigFileLoader.GFX_RESOLUTION]:
+		if resolution_options.get_item_text(i) == graphics_settings[Configuration.GFX_RESOLUTION]:
 			resolution_options.selected = i
 			break
 			
@@ -86,8 +86,8 @@ func _on_credits_button_pressed():
 		$HBoxContainer/Sections/Credits.show()
 		$HBoxContainer/Sections.show()
 
-func show_resume_button(show: bool):
-	$HBoxContainer/VBoxContainer/Main/VBoxContainer/ResumeButton.visible = show
+func show_resume_button(is_visible: bool):
+	$HBoxContainer/VBoxContainer/Main/VBoxContainer/ResumeButton.visible = is_visible
 
 func _on_level_selected(map_id: int):
 	level_selected.emit(map_id)
@@ -100,33 +100,33 @@ func _on_quit_button_pressed():
 
 func _on_master_volume_slider_drag_ended(value_changed):
 	if value_changed:
-		ConfigFileLoader.save_audio_settings(ConfigFileLoader.VOLUME_MASTER, master_volume_slider.value)
+		Configuration.save_audio_settings(Configuration.VOLUME_MASTER, master_volume_slider.value)
 
 func _on_music_volume_slider_drag_ended(value_changed):
 	if value_changed:
-		ConfigFileLoader.save_audio_settings(ConfigFileLoader.VOLUME_MUSIC, music_volume_slider.value)
+		Configuration.save_audio_settings(Configuration.VOLUME_MUSIC, music_volume_slider.value)
 
 func _on_sfx_volume_slider_drag_ended(value_changed):
 	if value_changed:
-		ConfigFileLoader.save_audio_settings(ConfigFileLoader.VOLUME_SFX, sfx_volume_slider.value)
+		Configuration.save_audio_settings(Configuration.VOLUME_SFX, sfx_volume_slider.value)
 
 func _on_resolution_option_button_item_selected(index):
-	ConfigFileLoader.update_resolution(resolution_options.get_item_text(index))
-	ConfigFileLoader.save_graphics_settings(ConfigFileLoader.GFX_RESOLUTION, resolution_options.get_item_text(index))
+	Configuration.update_resolution(resolution_options.get_item_text(index))
+	Configuration.save_graphics_settings(Configuration.GFX_RESOLUTION, resolution_options.get_item_text(index))
 	
 func _on_fullscreen_checkbox_toggled(toggled_on):
-	ConfigFileLoader.update_fullscreen(toggled_on)
-	ConfigFileLoader.save_graphics_settings(ConfigFileLoader.GFX_FULLSCREEN, toggled_on)
+	Configuration.update_fullscreen(toggled_on)
+	Configuration.save_graphics_settings(Configuration.GFX_FULLSCREEN, toggled_on)
 	
 func _on_accessible_fonts_checkbox_toggled(toggled_on):
-	ConfigFileLoader.update_theme_accessibility(toggled_on)
-	ConfigFileLoader.save_graphics_settings(ConfigFileLoader.GFX_USE_ACCESSIBLE_FONTS, toggled_on)
+	Configuration.update_theme_accessibility(toggled_on)
+	Configuration.save_graphics_settings(Configuration.GFX_USE_ACCESSIBLE_FONTS, toggled_on)
 
 func _on_master_volume_slider_value_changed(value):
-	ConfigFileLoader.update_master_volume(value)
+	Configuration.update_master_volume(value)
 	
 func _on_music_volume_slider_value_changed(value):
-	ConfigFileLoader.update_music_volume(value)
+	Configuration.update_music_volume(value)
 
 func _on_sfx_volume_slider_value_changed(value):
-	ConfigFileLoader.update_sfx_volume(value)
+	Configuration.update_sfx_volume(value)

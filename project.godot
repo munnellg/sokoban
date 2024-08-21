@@ -17,7 +17,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-ConfigFileLoader="*res://resources/ConfigFileLoader.gd"
+Configuration="*res://resources/Configuration.gd"
 
 [display]
 
