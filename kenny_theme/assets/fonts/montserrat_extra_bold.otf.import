@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://htfw6kuay3ef"
-path="res://.godot/imported/Kenney Rocket Square.ttf-dd610acf9f5c686f2dde5f9cc03cdf55.fontdata"
+uid="uid://ddknr3vcjoenl"
+path="res://.godot/imported/montserrat_extra_bold.otf-a70243369692e2e7b7cbea1976a806a1.fontdata"
 
 [deps]
 
-source_file="res://kenny_theme/assets/fonts/Kenney Rocket Square.ttf"
-dest_files=["res://.godot/imported/Kenney Rocket Square.ttf-dd610acf9f5c686f2dde5f9cc03cdf55.fontdata"]
+source_file="res://kenny_theme/assets/fonts/montserrat_extra_bold.otf"
+dest_files=["res://.godot/imported/montserrat_extra_bold.otf-a70243369692e2e7b7cbea1976a806a1.fontdata"]
 
 [params]
 

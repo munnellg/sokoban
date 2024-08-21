@@ -1,11 +1,10 @@
-[gd_resource type="Theme" load_steps=27 format=3 uid="uid://d384l0kaseax3"]
+[gd_resource type="Theme" load_steps=26 format=3 uid="uid://d384l0kaseax3"]
 
 [ext_resource type="Texture2D" uid="uid://hhn0a6ps87ae" path="res://kenny_theme/assets/widgets/panel.png" id="2_3dyca"]
 [ext_resource type="Texture2D" uid="uid://4dtaengrhw6l" path="res://kenny_theme/assets/widgets/button-up.png" id="2_7jlrn"]
 [ext_resource type="Texture2D" uid="uid://dnwxs2u85gxak" path="res://kenny_theme/assets/widgets/checked_checkbox.png" id="3_lvf5i"]
 [ext_resource type="Texture2D" uid="uid://c28xxrdi12qdp" path="res://kenny_theme/assets/widgets/button-down.png" id="3_q8j80"]
 [ext_resource type="Texture2D" uid="uid://d4k2yu85egcqd" path="res://kenny_theme/assets/widgets/unchecked_checkbox.png" id="4_0ju3k"]
-[ext_resource type="FontFile" uid="uid://pd46dsk2rexb" path="res://kenny_theme/assets/fonts/OpenDyslexic-Bold.otf" id="4_uiwmk"]
 [ext_resource type="Texture2D" uid="uid://bpvvt3bvl3pkg" path="res://kenny_theme/assets/widgets/slider_arrow.png" id="5_8ebfg"]
 [ext_resource type="FontFile" uid="uid://cl1rx6rr3iwy0" path="res://kenny_theme/assets/fonts/OpenDyslexic-Regular.otf" id="6_2drb6"]
 [ext_resource type="Texture2D" uid="uid://cpa3jmp4xf8aw" path="res://kenny_theme/assets/widgets/grey_sliderDown.png" id="6_xlpq7"]
@@ -104,7 +103,6 @@ HSlider/icons/grabber_highlight = ExtResource("5_8ebfg")
 HeaderLarge/base_type = &"Label"
 HeaderLarge/colors/font_color = Color(0.776471, 0.25098, 0.196078, 1)
 HeaderLarge/font_sizes/font_size = 48
-HeaderLarge/fonts/font = ExtResource("4_uiwmk")
 HeaderLarge/styles/normal = SubResource("StyleBoxEmpty_reec7")
 HeaderMedium/font_sizes/font_size = 32
 HeaderSmall/font_sizes/font_size = 20

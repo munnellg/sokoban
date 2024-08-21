@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bks7ndqhbgvq3"]
+[gd_scene load_steps=7 format=3 uid="uid://bks7ndqhbgvq3"]
 
 [ext_resource type="Script" path="res://sokoban.gd" id="1_bu6ey"]
 [ext_resource type="PackedScene" uid="uid://co0wml1w0tkjs" path="res://environment/environment.tscn" id="2_kuboa"]
 [ext_resource type="PackedScene" uid="uid://oc4yyao84wfn" path="res://level_finished/level_finished.tscn" id="3_p3y27"]
+[ext_resource type="Theme" uid="uid://d384l0kaseax3" path="res://kenny_theme/kenny_theme.tres" id="4_72lp2"]
 [ext_resource type="PackedScene" uid="uid://bb3si6evqpbyp" path="res://main_menu/main_menu.tscn" id="4_scnqx"]
 [ext_resource type="AudioStream" uid="uid://c4xi7o3fjnspr" path="res://music/Sergio Magic Dustbin.mp3" id="5_1b0ur"]
 
@@ -21,6 +22,7 @@ map_id = 0
 
 [node name="LevelFinished" parent="LevelFinishedLayer" instance=ExtResource("3_p3y27")]
 visible = false
+theme = ExtResource("4_72lp2")
 
 [node name="MainMenuLayer" type="CanvasLayer" parent="."]
 
@@ -38,8 +40,5 @@ bus = &"Music"
 [connection signal="retry_level_pressed" from="LevelFinishedLayer/LevelFinished" to="." method="_on_level_finished_retry_level_pressed"]
 [connection signal="level_resumed" from="MainMenuLayer/MainMenu" to="." method="_on_main_menu_level_resumed"]
 [connection signal="level_selected" from="MainMenuLayer/MainMenu" to="." method="_on_main_menu_level_selected"]
-[connection signal="value_changed" from="MainMenuLayer/MainMenu/HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer/HBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
-[connection signal="value_changed" from="MainMenuLayer/MainMenu/HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer/HBoxContainer2/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
-[connection signal="value_changed" from="MainMenuLayer/MainMenu/HBoxContainer/Sections/Options/VBoxContainer/AudioArea/VBoxContainer/HBoxContainer3/SfxVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
 
 [editable path="MainMenuLayer/MainMenu"]

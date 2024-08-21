@@ -15,12 +15,18 @@ run/main_scene="res://splash/splash.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
 
+[autoload]
+
+ConfigFileLoader="*res://resources/ConfigFileLoader.gd"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/size/resizable=false
+window/stretch/aspect="ignore"
+mouse_cursor/custom_image="res://kenny_theme/assets/cursors/hand_point.png"
+mouse_cursor/custom_image_hotspot=Vector2(11, 4)
 
 [editor]
 
@@ -30,10 +36,6 @@ version_control/autoload_on_startup=true
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/json_map_loader/plugin.cfg")
-
-[gui]
-
-theme/custom="res://kenny_theme/kenny_theme.tres"
 
 [rendering]
 
