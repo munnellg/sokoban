@@ -11,6 +11,9 @@ signal level_resumed
 func _ready():
 	$HBoxContainer/Sections.hide()
 	
+	# hide quit button if we're running in a web browser
+	$HBoxContainer/VBoxContainer/Main/VBoxContainer/QuitButton.visible = not OS.has_feature("web")
+	
 	for i in range(maps.size()):
 		var level_select = LevelSelect.instantiate()
 		level_select.title = maps[i].title
