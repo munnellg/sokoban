@@ -89,6 +89,12 @@ func _on_credits_button_pressed():
 func show_resume_button(is_visible: bool):
 	$HBoxContainer/VBoxContainer/Main/VBoxContainer/ResumeButton.visible = is_visible
 
+func update_level_state(map_id: int):
+	for level in level_list.get_children():
+		if level.level_id == map_id:
+			level.update_state()
+			break
+
 func _on_level_selected(map_id: int):
 	level_selected.emit(map_id)
 

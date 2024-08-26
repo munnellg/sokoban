@@ -15,9 +15,14 @@ run/main_scene="res://splash/splash.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.png"
 
+[audio]
+
+driver/output_latency.web=90
+
 [autoload]
 
 Configuration="*res://resources/Configuration.gd"
+GameState="*res://resources/GameState.gd"
 
 [display]
 

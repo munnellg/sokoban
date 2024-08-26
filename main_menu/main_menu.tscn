@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb3si6evqpbyp"]
+[gd_scene load_steps=3 format=3 uid="uid://bb3si6evqpbyp"]
 
-[ext_resource type="Texture2D" uid="uid://dm6bb70j5ouo2" path="res://main_menu/assets/sprites/background.png" id="1_0v66g"]
 [ext_resource type="Theme" uid="uid://d384l0kaseax3" path="res://kenny_theme/kenny_theme.tres" id="1_nib4k"]
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="2_tkoyk"]
 
@@ -13,17 +12,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_nib4k")
 script = ExtResource("2_tkoyk")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_0v66g")
-stretch_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -198,13 +186,15 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 alignment = 1
-item_count = 2
+item_count = 3
 selected = 0
 fit_to_longest_item = false
 popup/item_0/text = "1920x1080"
 popup/item_0/id = 0
 popup/item_1/text = "1440x810"
 popup/item_1/id = 1
+popup/item_2/text = "640x480"
+popup/item_2/id = 2
 
 [node name="ResolutionLabel" type="Label" parent="HBoxContainer/Sections/Options/VBoxContainer/GraphicsArea/VBoxContainer/HBoxContainer"]
 layout_mode = 2

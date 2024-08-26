@@ -14,10 +14,12 @@ var moving: bool = false
 
 signal on_pallet
 signal off_pallet
+signal pushed
 
 func push(impulse: Vector2):
 	if not moving and not _detect_collision(impulse):
 		move_to(position + impulse * grid_size)
+		pushed.emit()
 		return false
 	
 	return true
