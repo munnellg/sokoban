@@ -1,0 +1,14 @@
+[remap]
+
+importer="sokoban.jsonmapimporter"
+type="SokobanMaps"
+uid="uid://buetxbo4atheq"
+path="res://.godot/imported/levels.json-71f762290c89834d2861c8a79fe4d04e.tres"
+
+[deps]
+
+source_file="res://ui/splash/assets/levels/levels.json"
+dest_files=["res://.godot/imported/levels.json-71f762290c89834d2861c8a79fe4d04e.tres"]
+
+[params]
+

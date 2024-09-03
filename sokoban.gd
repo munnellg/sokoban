@@ -88,12 +88,9 @@ func _adjust_camera_zoom(map_size: Vector2):
 	var scale = vp_size / map_size
 	scale = min(min(scale.x, scale.y), 1.0)
 	$Viewport.set_zoom(Vector2(scale, scale))
-		
-	var centre_shift = (Vector2i(map_size / tile_size) % 2) * (Vector2i(tile_size) / 2)
-	print((vp_size - map_size) / 2)
-	print(-(centre_shift + Vector2i(0, toolbar_size.y / 2)))
-	$Viewport.position = -(centre_shift + Vector2i(0, toolbar_size.y / 2))
-	$Viewport.position = (vp_size - map_size) / 2
+	
+	var centre_shift = ((Vector2i.ONE + Vector2i(map_size / tile_size)) % 2) * (Vector2i(tile_size) / 2)
+	$Viewport.position = Vector2i(0, centre_shift.y - toolbar_size.y)
 	
 func _on_environment_level_initialized(size):	
 	_adjust_camera_zoom(size)

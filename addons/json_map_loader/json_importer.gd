@@ -95,4 +95,4 @@ func parse_map(json) -> SokobanMap:
 					crates.append(Vector2(x, y))
 					pallets.append(Vector2(x, y))
 	
-	return SokobanMap.new(json["title"], json["description"], json["is_locked"], size, walls, player_start, crates, pallets)
+	return SokobanMap.new(json["title"], json["description"], size, walls, player_start, crates, pallets)

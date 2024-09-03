@@ -11,12 +11,10 @@ enum TileType { PASSABLE, OBSTRUCTED }
 
 @export var title: String
 @export var description: String
-@export var locked: bool
 
-func _init(p_title = "", p_description = "", p_locked = false, p_size = Vector2(0, 0), p_walls = [], p_player_start = Vector2(0, 0), p_crates = [], p_pallets = []):
+func _init(p_title = "", p_description = "", p_size = Vector2(0, 0), p_walls = [], p_player_start = Vector2(0, 0), p_crates = [], p_pallets = []):
 	title        = p_title
 	description  = p_description
-	locked       = p_locked
 	size         = p_size
 	walls        = p_walls
 	player_start = p_player_start

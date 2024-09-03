@@ -4,39 +4,25 @@
 [ext_resource type="Script" path="res://environment/environment.gd" id="1_p1f7s"]
 [ext_resource type="Texture2D" uid="uid://b2xb6cq2sggf" path="res://environment/assets/sprites/blocks.png" id="2_m38d2"]
 [ext_resource type="Theme" uid="uid://d384l0kaseax3" path="res://kenny_theme/kenny_theme.tres" id="4_up0sl"]
-[ext_resource type="PackedScene" uid="uid://saryhih3bgdw" path="res://clock/clock.tscn" id="4_yc3x4"]
+[ext_resource type="PackedScene" uid="uid://saryhih3bgdw" path="res://ui/clock/clock.tscn" id="4_yc3x4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2gs1g"]
 texture = ExtResource("1_jsxtr")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
 2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_44uf5"]
 texture = ExtResource("2_m38d2")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 3:0/0 = 0
-3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-3:0/0/physics_layer_0/angular_velocity = 0.0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSet" id="TileSet_rv40p"]
@@ -50,7 +36,6 @@ tile_set = SubResource("TileSet_rv40p")
 format = 2
 layer_0/name = "Ground"
 layer_1/name = "Walls"
-layer_1/tile_data = PackedInt32Array()
 script = ExtResource("1_p1f7s")
 map_id = 3
 

@@ -1,5 +1,14 @@
 extends Node
 
+enum Setting { 
+	AUDIO_MASTER, 
+	AUDIO_SFX, 
+	AUDIO_MUSIC, 
+	GFX_FULLSCREEN, 
+	GFX_RESOLUTION, 
+	GFX_ACCESSIBLE_FONTS 
+}
+
 var config := ConfigFile.new()
 const SETTINGS_FILENAME: String = "user://settings.ini"
 
@@ -16,6 +25,16 @@ const GFX_USE_ACCESSIBLE_FONTS: String = "gfx_use_accessible_fonts"
 const default_theme     = preload("res://kenny_theme/kenny_theme.tres")
 const default_font      = preload("res://kenny_theme/assets/fonts/OpenDyslexic-Regular.otf")
 const inaccessible_font = preload("res://kenny_theme/assets/fonts/montserrat_extra_bold.otf")
+
+func update_setting(setting: Setting, value) -> void:
+	match setting:
+		Setting.AUDIO_MASTER, Setting.AUDIO_SFX, Setting.AUDIO_MUSIC:
+			pass
+
+func get_setting(setting: Setting):
+	match setting:
+		Setting.AUDIO_MASTER, Setting.AUDIO_SFX, Setting.AUDIO_MUSIC:
+			pass
 
 func _ready():
 	if !FileAccess.file_exists(SETTINGS_FILENAME):
@@ -64,13 +83,9 @@ func load_audio_settings():
 	return audio_settings
 
 func centre_window():
-	var primary_display_index = DisplayServer.get_primary_screen()
-	var screen_size = DisplayServer.screen_get_size(primary_display_index)
-	var window_size = DisplayServer.window_get_size()
-	var center_position = (screen_size - window_size) / 2
-	var display_position = DisplayServer.screen_get_position(primary_display_index)
-	center_position += display_position
-	DisplayServer.window_set_position(center_position)
+	var centre_screen = DisplayServer.screen_get_position() + DisplayServer.screen_get_size() / 2
+	var window_size = get_window().get_size_with_decorations()
+	get_window().set_position(centre_screen - window_size / 2)
 
 func update_resolution(resolution_str: String):
 	var resolution = resolution_str.split("x")
@@ -94,7 +109,7 @@ func update_music_volume(value):
 
 func update_sfx_volume(value):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sfx"), linear_to_db(value))
-	
+
 func update_theme_accessibility(apply_default: bool):
 	var enabled_font = default_font if apply_default else inaccessible_font
 	default_theme.set_font("font", "Label",        enabled_font)

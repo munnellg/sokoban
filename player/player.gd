@@ -82,4 +82,3 @@ func move_to(facing, target):
 	animation_state.travel("Idle")
 
 	moving = false
-

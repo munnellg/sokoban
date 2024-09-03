@@ -1,0 +1,209 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb3si6evqpbyp"]
+
+[ext_resource type="Theme" uid="uid://d384l0kaseax3" path="res://kenny_theme/kenny_theme.tres" id="1_nib4k"]
+[ext_resource type="Script" path="res://ui/main_menu/main_menu.gd" id="2_tkoyk"]
+[ext_resource type="PackedScene" uid="uid://dv57fmchtmb4s" path="res://ui/main_menu/options_pane/options_pane.tscn" id="3_dqpnm"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nib4k")
+script = ExtResource("2_tkoyk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Main" type="PanelContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Main"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"HeaderLarge"
+text = "Sokoban"
+horizontal_alignment = 1
+
+[node name="Spacer1" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ResumeButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Resume"
+
+[node name="PlayButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[node name="Spacer2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MainMenuSections" type="TabContainer" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+current_tab = 0
+tabs_visible = false
+deselect_enabled = true
+
+[node name="Play" type="PanelContainer" parent="MarginContainer/HBoxContainer/MainMenuSections"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MainMenuSections/Play"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Play/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"HeaderMedium"
+text = "Level Select"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/MainMenuSections/Play/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MainMenuSections/Play/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Options" parent="MarginContainer/HBoxContainer/MainMenuSections" instance=ExtResource("3_dqpnm")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Credits" type="PanelContainer" parent="MarginContainer/HBoxContainer/MainMenuSections"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits"]
+layout_mode = 2
+
+[node name="CreditsHeader" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"HeaderMedium"
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="CtoA2" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Visit fourteenscrews.itch.io for more"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control5" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CtoA" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Programming
+Gary Munnelly"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control3" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CtoA3" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Design
+Gary Munnelly & Georgie Williams"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control6" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LevelDesignCredit" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Level Design
+https://github.com/begoon/sokoban-maps"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control4" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AssetsCredit" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Assets by Kenny"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control7" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FontCredit" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "This project uses the OpenDyslexic font"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
