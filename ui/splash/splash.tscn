@@ -62,19 +62,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_bottom = 30
 
-[node name="Control4" type="Control" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Sokoban" type="Label" parent="VBoxContainer"]
+[node name="Sokoban" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_g7ecl")
@@ -82,7 +86,7 @@ theme_override_font_sizes/font_size = 128
 text = "Sokoban"
 horizontal_alignment = 1
 
-[node name="Version" type="Label" parent="VBoxContainer"]
+[node name="Version" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_g7ecl")
@@ -90,21 +94,21 @@ theme_override_font_sizes/font_size = 32
 text = "Version 0.1.0"
 horizontal_alignment = 1
 
-[node name="Control5" type="Control" parent="VBoxContainer"]
+[node name="Control5" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer"]
+[node name="Control3" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="MadeBy" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="MadeBy" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_4u6rt")
@@ -113,19 +117,19 @@ text = "Made By
 Fourteen Screws"
 horizontal_alignment = 1
 
-[node name="FourteenScrews" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="FourteenScrews" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_ewfcx")
 expand_mode = 4
 
-[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="MadeWith" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="MadeWith" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_4u6rt")
@@ -134,21 +138,21 @@ text = "Made With
 Godot"
 horizontal_alignment = 1
 
-[node name="Godot" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Godot" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_o5a5s")
 expand_mode = 3
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control6" type="Control" parent="VBoxContainer"]
+[node name="Control6" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="GameAssetsBy" type="Label" parent="VBoxContainer"]
+[node name="GameAssetsBy" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_4u6rt")
@@ -156,11 +160,11 @@ theme_override_font_sizes/font_size = 42
 text = "Game Assets By Kenny"
 horizontal_alignment = 1
 
-[node name="Control7" type="Control" parent="VBoxContainer"]
+[node name="Control7" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Copyright" type="Label" parent="VBoxContainer"]
+[node name="Copyright" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_4u6rt")
