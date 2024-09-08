@@ -58,7 +58,7 @@ func update_save_file():
 func _on_environment_level_finished():
 	_background_game()
 	update_save_file()
-	level_finished.set_solved_moves(environment.moves)
+	level_finished.steps = environment.moves
 	level_finished.show()
 
 func _on_main_menu_level_selected(map_id):
@@ -91,6 +91,6 @@ func _adjust_camera_zoom(map_size: Vector2):
 	
 	var centre_shift = ((Vector2i.ONE + Vector2i(map_size / tile_size)) % 2) * (Vector2i(tile_size) / 2)
 	$Viewport.position = Vector2i(0, centre_shift.y - toolbar_size.y)
-	
+
 func _on_environment_level_initialized(size):	
 	_adjust_camera_zoom(size)

@@ -3,7 +3,6 @@ extends Control
 var elapsed = 0
 @export var paused: bool = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not paused:
 		elapsed += delta
@@ -16,7 +15,7 @@ func reset():
 func pause():
 	paused = true
 
-func start():
+func unpause():
 	paused = false
 
 func as_time_str() -> String:

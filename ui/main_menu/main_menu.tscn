@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb3si6evqpbyp"]
+[gd_scene load_steps=6 format=3 uid="uid://bb3si6evqpbyp"]
 
 [ext_resource type="Theme" uid="uid://d384l0kaseax3" path="res://kenny_theme/kenny_theme.tres" id="1_nib4k"]
 [ext_resource type="Script" path="res://ui/main_menu/main_menu.gd" id="2_tkoyk"]
-[ext_resource type="PackedScene" uid="uid://dv57fmchtmb4s" path="res://ui/main_menu/options_pane/options_pane.tscn" id="3_dqpnm"]
+[ext_resource type="PackedScene" uid="uid://b5htbpnfu5ylc" path="res://ui/main_menu/play_pane.tscn" id="3_cafvk"]
+[ext_resource type="PackedScene" uid="uid://dv57fmchtmb4s" path="res://ui/main_menu/options_pane.tscn" id="3_dqpnm"]
+[ext_resource type="PackedScene" uid="uid://dr68spojk61jp" path="res://ui/main_menu/credits_pane.tscn" id="4_sr1tl"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -38,7 +40,7 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/Main"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer"]
+[node name="GameTitle" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_type_variation = &"HeaderLarge"
@@ -91,119 +93,24 @@ current_tab = 0
 tabs_visible = false
 deselect_enabled = true
 
-[node name="Play" type="PanelContainer" parent="MarginContainer/HBoxContainer/MainMenuSections"]
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MainMenuSections/Play"]
+[node name="PlayPane" parent="MarginContainer/HBoxContainer/MainMenuSections" instance=ExtResource("3_cafvk")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Play/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_type_variation = &"HeaderMedium"
-text = "Level Select"
-horizontal_alignment = 1
-
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/MainMenuSections/Play/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MainMenuSections/Play/VBoxContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Options" parent="MarginContainer/HBoxContainer/MainMenuSections" instance=ExtResource("3_dqpnm")]
+[node name="OptionsPane" parent="MarginContainer/HBoxContainer/MainMenuSections" instance=ExtResource("3_dqpnm")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Credits" type="PanelContainer" parent="MarginContainer/HBoxContainer/MainMenuSections"]
+[node name="CreditsPane" parent="MarginContainer/HBoxContainer/MainMenuSections" instance=ExtResource("4_sr1tl")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
-metadata/_tab_index = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits"]
-layout_mode = 2
-
-[node name="CreditsHeader" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_type_variation = &"HeaderMedium"
-text = "Credits"
-horizontal_alignment = 1
-
-[node name="CtoA2" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-text = "Visit fourteenscrews.itch.io for more"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Control5" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="CtoA" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-text = "Programming
-Gary Munnelly"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Control3" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="CtoA3" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-text = "Design
-Gary Munnelly & Georgie Williams"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Control6" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="LevelDesignCredit" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-text = "Level Design
-https://github.com/begoon/sokoban-maps"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Control4" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="AssetsCredit" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-text = "Assets by Kenny"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Control7" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="FontCredit" type="Label" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-text = "This project uses the OpenDyslexic font"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/MainMenuSections/Credits/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Main/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="level_selected" from="MarginContainer/HBoxContainer/MainMenuSections/PlayPane" to="." method="_on_play_pane_level_selected"]

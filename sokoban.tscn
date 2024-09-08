@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bks7ndqhbgvq3"]
+[gd_scene load_steps=6 format=3 uid="uid://bks7ndqhbgvq3"]
 
 [ext_resource type="Script" path="res://sokoban.gd" id="1_bu6ey"]
-[ext_resource type="PackedScene" uid="uid://dfmc3ktmp7iqj" path="res://environment/environment.tscn" id="2_kuboa"]
-[ext_resource type="PackedScene" uid="uid://oc4yyao84wfn" path="res://level_finished/level_finished.tscn" id="3_p3y27"]
-[ext_resource type="Theme" uid="uid://d384l0kaseax3" path="res://kenny_theme/kenny_theme.tres" id="4_72lp2"]
+[ext_resource type="PackedScene" uid="uid://dfmc3ktmp7iqj" path="res://gameplay/environment/environment.tscn" id="2_kuboa"]
+[ext_resource type="PackedScene" uid="uid://oc4yyao84wfn" path="res://ui/level_finished/level_finished.tscn" id="3_p3y27"]
 [ext_resource type="PackedScene" uid="uid://bb3si6evqpbyp" path="res://ui/main_menu/main_menu.tscn" id="4_scnqx"]
-[ext_resource type="AudioStream" uid="uid://h4w82iaen3pk" path="res://music/sergio-magic-dustbin.ogg" id="6_v2a7y"]
+[ext_resource type="AudioStream" uid="uid://h4w82iaen3pk" path="res://gameplay/assets/music/sergio-magic-dustbin.ogg" id="6_v2a7y"]
 
 [node name="Sokoban" type="Node2D"]
 script = ExtResource("1_bu6ey")
@@ -16,13 +15,11 @@ offset = Vector2(2048, 1024)
 
 [node name="Environment" parent="." instance=ExtResource("2_kuboa")]
 max_width = 64
-map_id = 0
 
 [node name="LevelFinishedLayer" type="CanvasLayer" parent="."]
 
 [node name="LevelFinished" parent="LevelFinishedLayer" instance=ExtResource("3_p3y27")]
 visible = false
-theme = ExtResource("4_72lp2")
 
 [node name="MainMenuLayer" type="CanvasLayer" parent="."]
 

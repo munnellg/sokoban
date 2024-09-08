@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://4dtaengrhw6l" path="res://kenny_theme/assets/widgets/button-up.png" id="2_7jlrn"]
 [ext_resource type="Texture2D" uid="uid://dnwxs2u85gxak" path="res://kenny_theme/assets/widgets/checked_checkbox.png" id="3_lvf5i"]
 [ext_resource type="Texture2D" uid="uid://c28xxrdi12qdp" path="res://kenny_theme/assets/widgets/button-down.png" id="3_q8j80"]
-[ext_resource type="Texture2D" uid="uid://d4k2yu85egcqd" path="res://kenny_theme/assets/widgets/unchecked_checkbox.png" id="4_0ju3k"]
+[ext_resource type="Texture2D" uid="uid://dy8vnwe3yuhhs" path="res://kenny_theme/assets/widgets/unchecked_checkbox.png" id="4_0ju3k"]
 [ext_resource type="Texture2D" uid="uid://bpvvt3bvl3pkg" path="res://kenny_theme/assets/widgets/slider_arrow.png" id="5_8ebfg"]
 [ext_resource type="FontFile" uid="uid://cl1rx6rr3iwy0" path="res://kenny_theme/assets/fonts/OpenDyslexic-Regular.otf" id="6_2drb6"]
-[ext_resource type="Texture2D" uid="uid://cpa3jmp4xf8aw" path="res://kenny_theme/assets/widgets/grey_sliderDown.png" id="6_xlpq7"]
+[ext_resource type="Texture2D" uid="uid://rc485td6qeih" path="res://kenny_theme/assets/widgets/grey_sliderDown.png" id="6_xlpq7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rv8bv"]
 texture = ExtResource("2_7jlrn")

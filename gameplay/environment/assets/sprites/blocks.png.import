@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rc485td6qeih"
-path="res://.godot/imported/grey_sliderDown.png-912724803de61e875b15608bd0b9f14c.ctex"
+uid="uid://b2xb6cq2sggf"
+path="res://.godot/imported/blocks.png-dbba1fddac2d6d276b18703549d19e1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kenny_theme/assets/widgets/grey_sliderDown.png"
-dest_files=["res://.godot/imported/grey_sliderDown.png-912724803de61e875b15608bd0b9f14c.ctex"]
+source_file="res://gameplay/environment/assets/sprites/blocks.png"
+dest_files=["res://.godot/imported/blocks.png-dbba1fddac2d6d276b18703549d19e1e.ctex"]
 
 [params]
 

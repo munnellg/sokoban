@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5htbpnfu5ylc"]
+
+[ext_resource type="Theme" uid="uid://d384l0kaseax3" path="res://kenny_theme/kenny_theme.tres" id="1_sosm6"]
+[ext_resource type="Script" path="res://ui/main_menu/play_pane.gd" id="2_3seki"]
+[ext_resource type="PackedScene" uid="uid://crw3tj6nhcoc5" path="res://ui/main_menu/level_select/level_select.tscn" id="3_6ccgq"]
+[ext_resource type="Resource" uid="uid://c6gpipo7u4pu8" path="res://levels/maps.json" id="4_ppr63"]
+
+[node name="PlayPane" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sosm6")
+script = ExtResource("2_3seki")
+LevelSelect = ExtResource("3_6ccgq")
+levels_resource = ExtResource("4_ppr63")
+metadata/_tab_index = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"HeaderMedium"
+text = "Level Select"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LevelList" type="VBoxContainer" parent="VBoxContainer2/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
