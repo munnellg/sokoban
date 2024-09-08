@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dratrrj5a3t2d"]
 
-[ext_resource type="PackedScene" uid="uid://d1s2mkrd808vh" path="res://ui/level_stats/level_stats.tscn" id="1_dhmtd"]
+[ext_resource type="PackedScene" uid="uid://d1s2mkrd808vh" path="res://gameplay/level_stats/level_stats.tscn" id="1_dhmtd"]
 [ext_resource type="Script" path="res://gameplay/gameplay.gd" id="1_in0e3"]
 [ext_resource type="Resource" uid="uid://c6gpipo7u4pu8" path="res://levels/maps.json" id="2_htthd"]
 [ext_resource type="PackedScene" uid="uid://dmo1hpkcbgbhy" path="res://gameplay/world/world.tscn" id="3_pcade"]
-[ext_resource type="PackedScene" uid="uid://oc4yyao84wfn" path="res://ui/level_finished/level_finished.tscn" id="4_g5ejo"]
+[ext_resource type="PackedScene" uid="uid://oc4yyao84wfn" path="res://gameplay/level_finished/level_finished.tscn" id="4_g5ejo"]
 
 [node name="Gameplay" type="Node2D"]
 script = ExtResource("1_in0e3")
@@ -32,6 +32,7 @@ max_width = 64
 
 [connection signal="next_level_pressed" from="LevelFinishedLayer/LevelFinished" to="." method="_on_level_finished_next_level_pressed"]
 [connection signal="retry_level_pressed" from="LevelFinishedLayer/LevelFinished" to="." method="_on_level_finished_retry_level_pressed"]
+[connection signal="reset_button_pressed" from="LevelStatsLayer/LevelStats" to="." method="_on_level_stats_reset_button_pressed"]
 [connection signal="crate_pushed" from="World" to="." method="_on_world_crate_pushed"]
 [connection signal="level_finished" from="World" to="." method="_on_world_level_finished"]
 [connection signal="player_moved" from="World" to="." method="_on_world_player_moved"]

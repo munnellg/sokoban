@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://saryhih3bgdw"]
 
-[ext_resource type="Script" path="res://ui/clock/clock.gd" id="1_sns1g"]
+[ext_resource type="Script" path="res://gameplay/clock/clock.gd" id="1_sns1g"]
 
 [node name="Clock" type="MarginContainer"]
 anchors_preset = 15

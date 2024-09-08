@@ -10,7 +10,6 @@ script = ExtResource("1_bu6ey")
 
 [node name="Gameplay" parent="." instance=ExtResource("2_exla1")]
 unique_name_in_owner = true
-current_level = -1
 
 [node name="MainMenuLayer" type="CanvasLayer" parent="."]
 
@@ -25,12 +24,9 @@ autoplay = true
 bus = &"Music"
 
 [node name="HideMouseTimer" type="Timer" parent="."]
-unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
 
-[connection signal="level_finished" from="Gameplay" to="." method="_on_gameplay_level_finished"]
-[connection signal="level_initialized" from="Gameplay" to="." method="_on_gameplay_level_initialized"]
 [connection signal="level_resumed" from="MainMenuLayer/MainMenu" to="." method="_on_main_menu_level_resumed"]
 [connection signal="level_selected" from="MainMenuLayer/MainMenu" to="." method="_on_main_menu_level_selected"]
 [connection signal="timeout" from="HideMouseTimer" to="." method="_on_hide_mouse_timer_timeout"]

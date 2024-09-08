@@ -5,4 +5,4 @@ class_name LevelStatsData
 
 @export var rating: int = 0
 @export var best_solve: int = -1
-@export var fastest_solve: int = -1
+@export var fastest_solve: float = -1

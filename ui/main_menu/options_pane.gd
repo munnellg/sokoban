@@ -1,5 +1,9 @@
 extends Control
 
+###############################################################################
+# PRIVATE METHODS
+###############################################################################
+
 func _ready():
 	var audio_settings = Configuration.load_audio_settings()
 	%MasterVolumeSlider.value = audio_settings[Configuration.VOLUME_MASTER]
@@ -14,6 +18,10 @@ func _ready():
 		if %ResolutionOptionButton.get_item_text(i) == graphics_settings[Configuration.GFX_RESOLUTION]:
 			%ResolutionOptionButton.selected = i
 			break
+
+###############################################################################
+# SIGNALS
+###############################################################################
 
 func _on_master_volume_slider_drag_ended(value_changed: bool) -> void:
 	if value_changed:

@@ -13,12 +13,14 @@ var moving   = false
 
 signal moved(direction: Vector2)
 
-func imax(a: Array):
-	var m = 0
-	for i in range(a.size()):
-		if a[i] > a[m]:
-			m = i
-	return m
+###############################################################################
+# PRIVATE METHODS
+###############################################################################
+
+func _ready():
+	# start facing player
+	animation_tree.set("parameters/Idle/blend_position", Vector2(0, 1))
+	animation_tree.set("parameters/Walk/blend_position", Vector2(0, 1))
 
 func _detect_collision(direction):
 	collision_ray.set_target_position(direction * grid_size)
@@ -34,21 +36,16 @@ func _detect_collision(direction):
 	
 	return true
 
-func _ready():
-	# start facing player
-	animation_tree.set("parameters/Idle/blend_position", Vector2(0, 1))
-	animation_tree.set("parameters/Walk/blend_position", Vector2(0, 1))
-	
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_up"):     keystate[Direction.up]    = Time.get_ticks_usec()
-	if Input.is_action_just_pressed("ui_down"):   keystate[Direction.down]  = Time.get_ticks_usec()
-	if Input.is_action_just_pressed("ui_left"):   keystate[Direction.left]  = Time.get_ticks_usec()
-	if Input.is_action_just_pressed("ui_right"):  keystate[Direction.right] = Time.get_ticks_usec()
+	if Input.is_action_just_pressed("move_up"):     keystate[Direction.up]    = Time.get_ticks_usec()
+	if Input.is_action_just_pressed("move_down"):   keystate[Direction.down]  = Time.get_ticks_usec()
+	if Input.is_action_just_pressed("move_left"):   keystate[Direction.left]  = Time.get_ticks_usec()
+	if Input.is_action_just_pressed("move_right"):  keystate[Direction.right] = Time.get_ticks_usec()
 	
-	if Input.is_action_just_released("ui_up"):     keystate[Direction.up]    = 0
-	if Input.is_action_just_released("ui_down"):   keystate[Direction.down]  = 0
-	if Input.is_action_just_released("ui_left"):   keystate[Direction.left]  = 0
-	if Input.is_action_just_released("ui_right"):  keystate[Direction.right] = 0
+	if Input.is_action_just_released("move_up"):     keystate[Direction.up]    = 0
+	if Input.is_action_just_released("move_down"):   keystate[Direction.down]  = 0
+	if Input.is_action_just_released("move_left"):   keystate[Direction.left]  = 0
+	if Input.is_action_just_released("move_right"):  keystate[Direction.right] = 0
 	
 	var most_recent_key = imax(keystate)
 	
@@ -56,6 +53,17 @@ func _process(_delta):
 		var direction = impulses[most_recent_key]
 		var target = position + direction * grid_size if not _detect_collision(direction) else position
 		move_to(direction, target)
+
+###############################################################################
+# PUBLIC METHODS
+###############################################################################
+
+func imax(a: Array):
+	var m = 0
+	for i in range(a.size()):
+		if a[i] > a[m]:
+			m = i
+	return m
 
 func move_to(facing, target):
 	moving = true

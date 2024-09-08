@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1s2mkrd808vh"]
 
 [ext_resource type="Theme" uid="uid://d384l0kaseax3" path="res://kenny_theme/kenny_theme.tres" id="1_1s3d3"]
-[ext_resource type="Script" path="res://ui/level_stats/level_stats.gd" id="2_6pkrp"]
-[ext_resource type="PackedScene" uid="uid://saryhih3bgdw" path="res://ui/clock/clock.tscn" id="2_bbikv"]
+[ext_resource type="Script" path="res://gameplay/level_stats/level_stats.gd" id="2_6pkrp"]
+[ext_resource type="PackedScene" uid="uid://saryhih3bgdw" path="res://gameplay/clock/clock.tscn" id="2_bbikv"]
 
 [node name="LevelStats" type="PanelContainer"]
 anchors_preset = 10

@@ -16,10 +16,24 @@ var step_count :
 		step_count = value
 		%StepsCount.text = str(value)
 
+var elapsed_time : int :
+	get():
+		return %Clock.elapsed
+	set(value):
+		%Clock.elapsed = value
+
+###############################################################################
+# PRIVATE METHODS
+###############################################################################
+
 func _ready() -> void:
 	move_count = 0
 	step_count = 0
-	
+
+###############################################################################
+# PUBLIC METHODS
+###############################################################################
+
 func pause_clock() -> void:
 	%Clock.pause()
 
@@ -46,6 +60,10 @@ func restart():
 
 func unpause():
 	%Clock.unpause()
+
+###############################################################################
+# SIGNALS
+###############################################################################
 
 func _on_reset_button_pressed() -> void:
 	reset_button_pressed.emit()

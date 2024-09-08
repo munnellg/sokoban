@@ -16,6 +16,24 @@ signal on_pallet
 signal off_pallet
 signal pushed
 
+###############################################################################
+# PRIVATE METHODS
+###############################################################################
+
+func _process(_delta):
+	# if we're already at the target, then switch to idle state
+	if not moving:
+		animated_sprite.animation = "Recessed" if state == State.on_pallet else "Idle"
+	
+func _detect_collision(direction):
+	collision_ray.set_target_position(direction * grid_size)
+	collision_ray.force_raycast_update()
+	return collision_ray.is_colliding()
+
+###############################################################################
+# PUBLIC METHODS
+###############################################################################
+
 func push(impulse: Vector2):
 	if not moving and not _detect_collision(impulse):
 		move_to(position + impulse * grid_size)
@@ -47,15 +65,9 @@ func move_to(target):
 
 	moving = false
 
-func _process(_delta):
-	# if we're already at the target, then switch to idle state
-	if not moving:
-		animated_sprite.animation = "Recessed" if state == State.on_pallet else "Idle"
-	
-func _detect_collision(direction):
-	collision_ray.set_target_position(direction * grid_size)
-	collision_ray.force_raycast_update()
-	return collision_ray.is_colliding()
+###############################################################################
+# SIGNALS
+###############################################################################
 
 func _on_pallet_check_area_entered(_area):
 	state = State.on_pallet

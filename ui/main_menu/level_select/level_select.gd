@@ -6,8 +6,16 @@ extends PanelContainer
 
 signal level_selected(i: int)
 
+###############################################################################
+# PRIVATE METHODS
+###############################################################################
+
 func _ready():
 	update_state()
+
+###############################################################################
+# PUBLIC METHODS
+###############################################################################
 
 func update_state():
 	if GameState.savegame.current_level < level_id:
@@ -33,7 +41,7 @@ func unlock_level():
 	if save_data != null:
 		%Rating.texture.region.position = Vector2(save_data.rating, 0) * %Rating.texture.region.size
 		%BestSolveScore.text = "N/A" if save_data.best_solve < 0 else "%d moves" % save_data.best_solve
-		%FastestSolveScore.text = "N/A" if save_data.fastest_solve < 0 else "%02d:%02d" % [ save_data.fastest_solve / 60, save_data.fastest_solve % 60 ]
+		%FastestSolveScore.text = "N/A" if save_data.fastest_solve < 0 else "%02d:%02d" % [ int(save_data.fastest_solve) / 60, int(save_data.fastest_solve) % 60 ]
 		
 	%TitleLabel.text       = title
 	%DescriptionLabel.text = description
@@ -47,6 +55,10 @@ func unlock_level():
 	%SelectButtonOverlay.disabled = false
 	
 	%HighScores.show()
-	
+
+###############################################################################
+# SIGNALS
+###############################################################################
+
 func _on_button_pressed():
 	level_selected.emit(level_id)

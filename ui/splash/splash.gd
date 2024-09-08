@@ -2,6 +2,10 @@ extends Control
 
 @export var next: PackedScene
 
+###############################################################################
+# PRIVATE METHODS
+###############################################################################
+
 func _process(_delta):
 	# Allow players to skip splash
 	if Input.is_anything_pressed():

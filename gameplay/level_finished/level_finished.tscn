@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://oc4yyao84wfn"]
 
-[ext_resource type="Script" path="res://ui/level_finished/level_finished.gd" id="1_kbmrq"]
+[ext_resource type="Script" path="res://gameplay/level_finished/level_finished.gd" id="1_kbmrq"]
 [ext_resource type="Theme" uid="uid://d384l0kaseax3" path="res://kenny_theme/kenny_theme.tres" id="1_uhb1d"]
 
 [node name="LevelFinished" type="Control"]

@@ -18,12 +18,20 @@ signal level_initialized(size: Vector2)
 signal player_moved(direction: Vector2)
 signal crate_pushed
 
+###############################################################################
+# PRIVATE METHODS
+###############################################################################
+
 func _ready() -> void:
 	draw_ground()
 
 func _process(delta: float) -> void:
 	if get_tree().get_nodes_in_group("crates").all(is_on_pallet):
 		level_finished.emit()
+
+###############################################################################
+# PUBLIC METHODS
+###############################################################################
 
 func is_on_pallet(crate) -> bool:
 	return crate.is_on_pallet()
