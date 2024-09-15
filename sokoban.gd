@@ -31,8 +31,12 @@ func _toggle_main_menu():
 		_background_game()
 		
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_cancel") and %Gameplay.map_loaded:
-		_toggle_main_menu()
+	# toggling the pause menu only works after we've loaded a map
+	if %Gameplay.map_loaded:
+		if OS.has_feature("web") and Input.is_action_just_pressed("ui_cancel"):
+			_toggle_main_menu()
+		elif Input.is_action_just_pressed("pause"):
+			_toggle_main_menu()
 		
 	if Input.get_last_mouse_velocity().length() > 0:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

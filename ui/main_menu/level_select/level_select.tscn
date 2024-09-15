@@ -45,6 +45,7 @@ size_flags_vertical = 3
 
 [node name="DescriptionLabel" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -62,12 +63,14 @@ layout_mode = 2
 columns = 2
 
 [node name="RatingLabel" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/HighScores"]
+visible = false
 layout_mode = 2
 theme_type_variation = &"HeaderSmall"
 text = "Rating:"
 
 [node name="Rating" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer/HighScores"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 texture = SubResource("AtlasTexture_qvaqb")
 stretch_mode = 4

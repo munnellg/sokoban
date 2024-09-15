@@ -11,28 +11,28 @@ grow_vertical = 2
 theme = ExtResource("1_ah8lr")
 metadata/_tab_index = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="CreditsHeader" type="Label" parent="VBoxContainer2"]
+[node name="CreditsHeader" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_type_variation = &"HeaderMedium"
 text = "Credits"
 horizontal_alignment = 1
 
-[node name="CtoA2" type="Label" parent="VBoxContainer2"]
+[node name="CtoA2" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Visit fourteenscrews.itch.io for more"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control5" type="Control" parent="VBoxContainer2"]
+[node name="Control5" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CtoA" type="Label" parent="VBoxContainer2"]
+[node name="CtoA" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Programming
@@ -40,11 +40,11 @@ Gary Munnelly"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control3" type="Control" parent="VBoxContainer2"]
+[node name="Control3" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CtoA3" type="Label" parent="VBoxContainer2"]
+[node name="CtoA3" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Design
@@ -52,11 +52,11 @@ Gary Munnelly & Georgie Williams"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control6" type="Control" parent="VBoxContainer2"]
+[node name="Control6" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="LevelDesignCredit" type="Label" parent="VBoxContainer2"]
+[node name="LevelDesignCredit" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Level Design
@@ -64,28 +64,29 @@ https://github.com/begoon/sokoban-maps"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control4" type="Control" parent="VBoxContainer2"]
+[node name="Control4" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AssetsCredit" type="Label" parent="VBoxContainer2"]
+[node name="AssetsCredit" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Assets by Kenny"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control7" type="Control" parent="VBoxContainer2"]
+[node name="Control7" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="FontCredit" type="Label" parent="VBoxContainer2"]
+[node name="FontCredit" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-text = "This project uses the OpenDyslexic font"
+text = "Fonts
+OpenDyslexic, Monteserrat, Kenny Blocks, Kenny Pixel"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control" type="Control" parent="VBoxContainer2"]
+[node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3

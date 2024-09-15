@@ -18,6 +18,9 @@ func _ready():
 		if %ResolutionOptionButton.get_item_text(i) == graphics_settings[Configuration.GFX_RESOLUTION]:
 			%ResolutionOptionButton.selected = i
 			break
+	
+	%ResolutionOptionButton.disabled = %FullscreenCheckbox.button_pressed
+	%ResolutionOptionButton.visible = not OS.has_feature("web")
 
 ###############################################################################
 # SIGNALS
@@ -41,6 +44,7 @@ func _on_resolution_option_button_item_selected(index: int) -> void:
 	
 func _on_fullscreen_checkbox_toggled(toggled_on: bool) -> void:
 	Configuration.update_fullscreen(toggled_on)
+	%ResolutionOptionButton.disabled = %FullscreenCheckbox.button_pressed
 	Configuration.save_graphics_settings(Configuration.GFX_FULLSCREEN, toggled_on)
 	
 func _on_accessible_fonts_checkbox_toggled(toggled_on: bool) -> void:

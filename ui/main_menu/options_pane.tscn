@@ -102,12 +102,10 @@ layout_mode = 2
 alignment = 1
 selected = 0
 fit_to_longest_item = false
-item_count = 3
+item_count = 2
 popup/item_0/text = "1920x1080"
 popup/item_1/text = "1440x810"
 popup/item_1/id = 1
-popup/item_2/text = "640x480"
-popup/item_2/id = 2
 
 [node name="ResolutionLabel" type="Label" parent="VBoxContainer/GraphicsSettings/VBoxContainer/HBoxContainer"]
 layout_mode = 2
