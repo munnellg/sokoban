@@ -11,28 +11,34 @@ grow_vertical = 2
 theme = ExtResource("1_ah8lr")
 metadata/_tab_index = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
 
-[node name="CreditsHeader" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CreditsHeader" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_type_variation = &"HeaderMedium"
 text = "Credits"
 horizontal_alignment = 1
 
-[node name="CtoA2" type="Label" parent="VBoxContainer"]
+[node name="CtoA2" type="Label" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Visit fourteenscrews.itch.io for more"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control5" type="Control" parent="VBoxContainer"]
+[node name="Control5" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CtoA" type="Label" parent="VBoxContainer"]
+[node name="CtoA" type="Label" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Programming
@@ -40,11 +46,12 @@ Gary Munnelly"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control3" type="Control" parent="VBoxContainer"]
+[node name="Control3" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CtoA3" type="Label" parent="VBoxContainer"]
+[node name="CtoA3" type="Label" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Design
@@ -52,11 +59,12 @@ Gary Munnelly & Georgie Williams"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control6" type="Control" parent="VBoxContainer"]
+[node name="Control6" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="LevelDesignCredit" type="Label" parent="VBoxContainer"]
+[node name="LevelDesignCredit" type="Label" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Level Design
@@ -64,22 +72,39 @@ https://github.com/begoon/sokoban-maps"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control4" type="Control" parent="VBoxContainer"]
+[node name="Control4" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AssetsCredit" type="Label" parent="VBoxContainer"]
+[node name="MusicCredit" type="Label" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Music
+Sergio's Magic Dustbin Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control8" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AssetsCredit" type="Label" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Assets by Kenny"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control7" type="Control" parent="VBoxContainer"]
+[node name="Control7" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="FontCredit" type="Label" parent="VBoxContainer"]
+[node name="FontCredit" type="Label" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Fonts
@@ -87,6 +112,7 @@ OpenDyslexic, Monteserrat, Kenny Blocks, Kenny Pixel"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3

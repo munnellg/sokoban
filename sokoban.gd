@@ -33,7 +33,7 @@ func _toggle_main_menu():
 func _process(_delta):
 	# toggling the pause menu only works after we've loaded a map
 	if %Gameplay.map_loaded:
-		if OS.has_feature("web") and Input.is_action_just_pressed("ui_cancel"):
+		if not OS.has_feature("web") and Input.is_action_just_pressed("ui_cancel"):
 			_toggle_main_menu()
 		elif Input.is_action_just_pressed("pause"):
 			_toggle_main_menu()

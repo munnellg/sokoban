@@ -71,7 +71,11 @@ func apply_settings():
 	update_music_volume(config.get_value(SECTION_AUDIO, VOLUME_MUSIC))
 	update_sfx_volume(config.get_value(SECTION_AUDIO, VOLUME_SFX))
 	
-	update_resolution(config.get_value(SECTION_GRAPHICS, GFX_RESOLUTION))
+	if OS.has_feature("web"):
+		update_resolution("1440x810")
+	else:
+		update_resolution(config.get_value(SECTION_GRAPHICS, GFX_RESOLUTION))
+	
 	update_fullscreen(config.get_value(SECTION_GRAPHICS, GFX_FULLSCREEN))
 	
 	update_theme_accessibility(config.get_value(SECTION_GRAPHICS, GFX_USE_ACCESSIBLE_FONTS))
@@ -99,7 +103,10 @@ func update_fullscreen(fullscreen: bool):
 	# if the resolution changed while in fullscreen, we may need
 	# to update the resolution again when we switch back to windowed
 	if not fullscreen:
-		update_resolution(config.get_value(SECTION_GRAPHICS, GFX_RESOLUTION))
+		if OS.has_feature("web"):
+			update_resolution("1440x810")
+		else:
+			update_resolution(config.get_value(SECTION_GRAPHICS, GFX_RESOLUTION))
 
 func update_master_volume(value):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))

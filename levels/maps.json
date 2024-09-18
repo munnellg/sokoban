@@ -13,7 +13,7 @@
             "    #      ###  ######",
             "    ########          "
         ],
-        "title": "First Steps",
+        "title": "Level 1",
         "description": "An easy level to get you started. Don't think too hard about it.",
     },
     {
@@ -29,7 +29,7 @@
             "  #    #     #",
             "  ############"
         ],
-        "title": "Claustrophobia",
+        "title": "Level 2",
         "description": "It's a little too cozy in here.",
     },
     {
@@ -45,7 +45,7 @@
             "#....  ##########",
             "########         "
         ],
-        "title": "A Night Out",
+        "title": "Level 3",
         "description": "That's a long queue to get into the club.",
     },
     {
@@ -64,7 +64,7 @@
             "#   #   ##            ",
             "#########             "
         ],
-        "title": "A Glorious Parade",
+        "title": "Level 4",
         "description": "March your crates down the aisle.",
     },
     {
@@ -83,7 +83,7 @@
             "          #    # ",
             "          ###### "
         ],
-        "title": "What Goes Around",
+        "title": "Level 5",
         "description": "A slip at the start could cost you dearly at the end.",
     },
     {
@@ -100,7 +100,7 @@
             "   #  ##   #",
             "   #########"
         ],
-        "title": "Rank and File",
+        "title": "Level 6",
         "description": "Oh when the saints go marching in...",
     },
     {
@@ -118,7 +118,7 @@
             "#  ### ##### ",
             "####         "
         ],
-        "title": "At The Last Hurdle",
+        "title": "Level 7",
         "description": "Eyes on the prize to avoid disaster with this one.",
     },
     {
@@ -141,7 +141,7 @@
             "  #......#      ",
             "  ########      "
         ],
-        "title": "To The Four Winds",
+        "title": "Level 8",
         "description": "Gather your scattered flock in their paddock.",
     },
     {
@@ -165,7 +165,7 @@
             "        #  #     ",
             "        ####     "
         ],
-        "title": "Clutter",
+        "title": "Level 9",
         "description": "You should probably get your room in order early with this one.",
     },
     {
@@ -191,7 +191,7 @@
             "    #           #    ",
             "    #############    "
         ],
-        "title": "Bypass",
+        "title": "Level 10",
         "description": "The roads are jammed. It might be best to take the long way around.",
     },
     {
@@ -212,7 +212,7 @@
             "#.....#            ",
             "#######            "
         ],
-        "title": "Mix-Up",
+        "title": "Level 11",
         "description": "Half these crates are on the wrong starting square.",
     },
     {
@@ -234,7 +234,7 @@
             " #  #####  # ",
             " ####   #### "
         ],
-        "title": "Pothole",
+        "title": "Level 12",
         "description": "Fill in the holes to make the ground whole.",
     },
     {
@@ -253,7 +253,7 @@
             " #   #    ##########",
             " #####              "
         ],
-        "title": "Escape Plan",
+        "title": "Level 13",
         "description": "There must be some kind of way out of here.",
     },
     {
